@@ -26,6 +26,17 @@ const {
 	RangeControl,
 } = wp.components;
 
+const defaultOptions = {
+	animation: animationOptions && animationOptions.length > 0 ? animationOptions[0].value : 'fade',
+	offset: 120,
+	delay: 0,
+	duration: 400,
+	easing: easingOptions && easingOptions.length > 0 ? easingOptions[0].value : 'ease',
+	once: true,
+	mirror: false,
+	anchorPlacement: anchorPlacementOptions && anchorPlacementOptions.length > 0 ? anchorPlacementOptions[0].value : 'top-bottom',
+}
+
 registerBlockType( `${ config.namespace }/animate`, {
 	title: __('Animate Block'),
 	icon: 'controls-forward',
@@ -35,35 +46,35 @@ registerBlockType( `${ config.namespace }/animate`, {
 	attributes: {
 		animation: {
 			type: 'string',
-			default: animationOptions && animationOptions.length > 0 ? animationOptions[0].value : 'fade',
+			default: defaultOptions.animation,
 		},
 		offset: {
 			type: 'number',
-			default: 120,
+			default: defaultOptions.offset,
 		},
 		delay: {
 			type: 'number',
-			default: 0,
+			default: defaultOptions.delay,
 		},
 		duration: {
 			type: 'number',
-			default: 400,
+			default: defaultOptions.duration,
 		},
 		easing: {
 			type: 'string',
-			default: easingOptions && easingOptions.length > 0 ? easingOptions[0].value : 'ease',
+			default: defaultOptions.easing,
 		},
 		once: {
 			type: 'boolean',
-			default: true,
+			default: defaultOptions.once,
 		},
 		mirror: {
 			type: 'boolean',
-			default: false,
+			default: defaultOptions.mirror,
 		},
 		anchorPlacement: {
 			type: 'string',
-			default: anchorPlacementOptions && anchorPlacementOptions.length > 0 ? anchorPlacementOptions[0].value : 'top-bottom',
+			default: defaultOptions.anchorPlacement,
 		}
 	},
 
@@ -148,15 +159,28 @@ registerBlockType( `${ config.namespace }/animate`, {
 	},
 
 	save( { attributes, className } ) {
-		const { animation = '', offset, delay, duration } = attributes;
+		const {
+			animation = '',
+			offset,
+			delay,
+			duration,
+			easing,
+			once,
+			mirror,
+			anchorPlacement,
+		} = attributes;
 
 		return (
 			<div
 				className={ className }
 				data-aos={ animation }
-				data-aos-delay={ delay }
-				data-aos-offset={ offset }
-				data-aos-duration={ duration }
+				{ ...( delay !== defaultOptions.delay && { 'data-aos-delay': delay } ) }
+				{ ...( duration !== defaultOptions.duration && { 'data-aos-duration': duration } ) }
+				{ ...( offset !== defaultOptions.offset && { 'data-aos-offset': offset } ) }
+				{ ...( easing !== defaultOptions.easing && { 'data-aos-easing': easing } ) }
+				{ ...( once !== defaultOptions.once && { 'data-aos-once': once } ) }
+				{ ...( mirror !== defaultOptions.mirror && { 'data-aos-mirror': mirror } ) }
+				{ ...( anchorPlacement !== defaultOptions.anchorPlacement && { 'data-aos-anchor-placement': anchorPlacement } ) }
 			>
 				<InnerBlocks.Content/>
 			</div>
