@@ -25,8 +25,9 @@ const {
 	ToggleControl,
 	RangeControl,
 } = wp.components;
+const { applyFilters } = wp.hooks;
 
-const defaultOptions = {
+let defaultOptions = {
 	animation: animationOptions && animationOptions.length > 0 ? animationOptions[0].value : 'fade',
 	offset: 120,
 	delay: 0,
@@ -36,6 +37,7 @@ const defaultOptions = {
 	mirror: false,
 	anchorPlacement: anchorPlacementOptions && anchorPlacementOptions.length > 0 ? anchorPlacementOptions[0].value : 'top-bottom',
 }
+defaultOptions = applyFilters( 'animateBlocks.defaultOptions', defaultOptions );
 
 registerBlockType( `${ config.namespace }/animate`, {
 	title: __('Animate Block'),
