@@ -10,4 +10,3 @@
  */
 
 import './animate/block.js';
-import './aos';

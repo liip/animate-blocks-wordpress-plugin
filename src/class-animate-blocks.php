@@ -123,9 +123,25 @@ class AnimateBlocks {
 		);
 		wp_enqueue_style(
 			$this->_token . '-aos-styles', // Handle.
-			'https://unpkg.com/aos@next/dist/aos.css',
+			esc_url( $this->assets_url ) . 'aos-3.0.0-beta.6/aos.css',
 			array(),
-			$this->_version
+			'3.0.0-beta.6'
+		);
+
+		// Scripts
+		wp_enqueue_script(
+			$this->_token . '-aos-js', // Handle.
+			esc_url( $this->assets_url ) . 'aos-3.0.0-beta.6/aos.js',
+			array(), // Dependencies, defined above.
+			'3.0.0-beta.6',
+			true // Enqueue the script in the footer.
+		);
+		wp_enqueue_script(
+			$this->_token . '-aos-init-js', // Handle.
+			esc_url( $this->assets_url ) . 'aos-init.js',
+			array( $this->_token . '-aos-js' ), // Dependencies, defined above.
+			$this->_version,
+			true // Enqueue the script in the footer.
 		);
 	}
 
