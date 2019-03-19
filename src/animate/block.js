@@ -10,7 +10,7 @@ import config from '../config';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { Fragment } = wp.element;
+const { Fragment, createRef } = wp.element;
 const {
 	InnerBlocks,
 	InspectorControls,
@@ -50,15 +50,15 @@ registerBlockType( `${ config.namespace }/animate`, {
 			default: animations[0].value,
 		},
 		offset: {
-			type: 'integer',
+			type: 'number',
 			default: 0,
 		},
 		delay: {
-			type: 'integer',
+			type: 'number',
 			default: 0,
 		},
 		duration: {
-			type: 'integer',
+			type: 'number',
 			default: 400,
 		}
 	},
