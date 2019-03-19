@@ -2,9 +2,6 @@
  * BLOCK: animate-blocks/animate
  */
 
-// Import styles
-import './styles/style.scss';
-
 // Import block dependencies
 import config from '../config';
 import anchorPlacementOptions from './anchor-placement-options';
