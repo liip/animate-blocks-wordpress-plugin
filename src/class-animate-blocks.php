@@ -91,11 +91,14 @@ class AnimateBlocks {
 	 * Initializes hooks.
 	 */
 	protected function init_hooks() {
-		// Hook: Frontend assets.
+		// Frontend & Backend assets
 		add_action( 'enqueue_block_assets', array( $this, 'enqueue_block_assets' ) );
 
-		// Hook: Editor assets.
+		// Editor assets
 		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_block_editor_assets' ) );
+
+		// Frontend assets
+		add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_scripts' ) );
 
 		// Load textdomain
 		add_action( 'plugins_loaded', array( $this, 'load_plugin_textdomain' ) );
@@ -121,28 +124,6 @@ class AnimateBlocks {
 			array( 'wp-editor' ), // Dependency to include the CSS after it.
 			$this->_version
 		);
-		wp_enqueue_style(
-			$this->_token . '-aos-styles', // Handle.
-			esc_url( $this->assets_url ) . 'aos-3.0.0-beta.6/aos.css',
-			array(),
-			'3.0.0-beta.6'
-		);
-
-		// Scripts
-		wp_enqueue_script(
-			$this->_token . '-aos-js', // Handle.
-			esc_url( $this->assets_url ) . 'aos-3.0.0-beta.6/aos.js',
-			array(), // Dependencies, defined above.
-			'3.0.0-beta.6',
-			true // Enqueue the script in the footer.
-		);
-		wp_enqueue_script(
-			$this->_token . '-aos-init-js', // Handle.
-			esc_url( $this->assets_url ) . 'aos-init.js',
-			array( $this->_token . '-aos-js' ), // Dependencies, defined above.
-			$this->_version,
-			true // Enqueue the script in the footer.
-		);
 	}
 
 	/**
@@ -162,6 +143,32 @@ class AnimateBlocks {
 			$this->_token . '-js', // Handle.
 			esc_url( $this->assets_url ) . 'blocks.build.js', // block.build.js: We register the block here. Built with Webpack.
 			array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ), // Dependencies, defined above.
+			$this->_version,
+			true // Enqueue the script in the footer.
+		);
+	}
+
+	public function wp_enqueue_scripts() {
+		// Styles
+		wp_enqueue_style(
+			$this->_token . '-aos-styles', // Handle.
+			esc_url( $this->assets_url ) . 'aos-3.0.0-beta.6/aos.css',
+			array(),
+			'3.0.0-beta.6'
+		);
+
+		// Scripts
+		wp_enqueue_script(
+			$this->_token . '-aos-js', // Handle.
+			esc_url( $this->assets_url ) . 'aos-3.0.0-beta.6/aos.js',
+			array(), // Dependencies, defined above.
+			'3.0.0-beta.6',
+			true // Enqueue the script in the footer.
+		);
+		wp_enqueue_script(
+			$this->_token . '-aos-init-js', // Handle.
+			esc_url( $this->assets_url ) . 'aos-init.js',
+			array( $this->_token . '-aos-js' ), // Dependencies, defined above.
 			$this->_version,
 			true // Enqueue the script in the footer.
 		);
