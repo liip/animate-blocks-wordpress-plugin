@@ -57,9 +57,7 @@ class AnimateBlocks {
 	public function __construct() {
 		$this->define_constants();
 		$this->init_plugin_environment();
-		$this->includes();
 		$this->init_hooks();
-		$this->init_plugin();
 	}
 
 	/**
@@ -81,19 +79,9 @@ class AnimateBlocks {
 	}
 
 	/**
-	 * Include required core files.
-	 */
-	public function includes() {
-		// Load plugin class files
-	}
-
-	/**
 	 * Initializes hooks.
 	 */
 	protected function init_hooks() {
-		// Frontend & Backend assets
-		add_action( 'enqueue_block_assets', array( $this, 'enqueue_block_assets' ) );
-
 		// Editor assets
 		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_block_editor_assets' ) );
 
@@ -108,36 +96,9 @@ class AnimateBlocks {
 	}
 
 	/**
-	 * Initialize plugin dependencies.
-	 */
-	public function init_plugin() {
-	}
-
-	/**
-	 * Load frontend block assets.
-	 */
-	public function enqueue_block_assets() {
-		// Styles
-		wp_enqueue_style(
-			$this->_token . '-styles', // Handle.
-			esc_url( $this->assets_url ) . 'blocks.style.build.css', // Block style CSS.
-			array( 'wp-editor' ), // Dependency to include the CSS after it.
-			$this->_version
-		);
-	}
-
-	/**
 	 * Load editor block assets.
 	 */
 	public function enqueue_block_editor_assets() {
-		// Styles
-		wp_enqueue_style(
-			$this->_token . '-editor-styles', // Handle.
-			esc_url( $this->assets_url ) . 'blocks.editor.build.css', // Block editor CSS.
-			array( 'wp-edit-blocks' ), // Dependency to include the CSS after it.
-			$this->_version
-		);
-
 		// Scripts
 		wp_enqueue_script(
 			$this->_token . '-js', // Handle.
