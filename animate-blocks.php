@@ -26,7 +26,7 @@ if ( ! defined( 'ANIMATE_BLOCKS_PLUGIN_FILE' ) ) {
 
 // Include the main AnimateBlocks class.
 if ( ! class_exists( \AnimateBlocks\AnimateBlocks::class ) ) {
-	require_once plugin_dir_path( ANIMATE_BLOCKS_PLUGIN_FILE ) . 'class-animate-blocks.php';
+	require_once plugin_dir_path( ANIMATE_BLOCKS_PLUGIN_FILE ) . 'src/class-animate-blocks.php';
 }
 
 // Initialize plugin
