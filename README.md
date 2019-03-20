@@ -94,6 +94,27 @@ wp.hooks.addFilter( 'animateBlocks.easingOptions', 'myplugin/animate-blocks/easi
 
 * `easingOptions` (array) Array with easing options
 
+
+## PHP Filters
+
+### animate_blocks_load_aos
+
+Enable or disable loading of AOS library.
+
+#### Usage:
+
+```php
+function my_plugin_disable_load_aos( $load_aos ) {
+    $load_aos = false;
+    return $load_aos;
+}
+add_filter( 'animate_blocks_load_aos', 'my_plugin_disable_load_aos' );
+```
+
+#### Parameters:
+
+* `$enable_aos` (boolean) If true AOS will be loaded by the plugin.
+
 ## Developer information
 
 This project was bootstrapped with [Create Guten Block](https://github.com/ahmadawais/create-guten-block).
