@@ -40,6 +40,6 @@ let anchorPlacementOptions = [
 		value: 'bottom-top',
 	},
 ];
-anchorPlacementOptions = applyFilters( 'animateBlocks.anchorPlacements', anchorPlacementOptions );
+anchorPlacementOptions = applyFilters( 'animateBlocks.anchorPlacementOptions', anchorPlacementOptions );
 
 export default anchorPlacementOptions;

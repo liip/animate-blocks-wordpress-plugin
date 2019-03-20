@@ -117,7 +117,7 @@ const animationEmptyOption = {
 	value: '',
 };
 
-animationOptions = applyFilters( 'animateBlocks.animations', animationOptions );
+animationOptions = applyFilters( 'animateBlocks.animationOptions', animationOptions );
 animationOptions = [ animationEmptyOption, ...animationOptions ];
 
 export default animationOptions;
