@@ -37,10 +37,10 @@ let defaultOptions = {
 defaultOptions = applyFilters( 'animateBlocks.defaultOptions', defaultOptions );
 
 registerBlockType( `${ config.namespace }/animate`, {
-	title: __('Animate Block'),
+	title: __( 'Animate Block', config.textDomain ),
 	icon: 'controls-forward',
 	category: 'layout',
-	description: __('Animate blocks inside this container.'),
+	description: __( 'Animate blocks inside this container.', config.textDomain ),
 
 	attributes: {
 		animation: {
