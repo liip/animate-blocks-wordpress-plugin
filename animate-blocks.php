@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Animate Blocks
- * Plugin URI: https://liip.ch
+ * Plugin URI: https://github.com/liip/animate-blocks-wordpress-plugin
  * Description: Animate Blocks - Animate your Gutenberg blocks.
  * Author: Team Jazz, Liip AG
  * Author URI: https://liip.ch
