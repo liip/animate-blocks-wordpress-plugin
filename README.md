@@ -2,12 +2,12 @@
 
 Animate Gutenberg blocks when they scroll into view.
 
-![Animate Blocks Demo](https://raw.githubusercontent.com/liip/animate-blocks-wordpress-plugin/master/assets/github/animate-blocks-demo.gif)
-
 * Works with all existing Gutenberg blocks
 * Choose from 27 different animations
 * Configure animation with custom delays, offsets and durations
 * Based on [AOS Animate On Scroll Library](http://michalsnik.github.io/aos/)
+
+![Animate Blocks Demo](https://raw.githubusercontent.com/liip/animate-blocks-wordpress-plugin/master/assets/github/animate-blocks-demo.gif)
 
 ## JavaScript Filters
 
