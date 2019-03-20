@@ -121,15 +121,15 @@ add_filter( 'animate_blocks_load_aos', 'my_plugin_disable_load_aos' );
 
 This project was bootstrapped with [Create Guten Block](https://github.com/ahmadawais/create-guten-block).
 
-## 👉  `npm start`
+### 👉  `npm start`
 - Use to compile and run the block in development mode.
 - Watches for any changes and reports back any errors in your code.
 
-## 👉  `npm run build`
+### 👉  `npm run build`
 - Use to build production code for your block inside `dist` folder.
 - Runs once and reports back the gzip file sizes of the produced code.
 
-## 👉  `npm run eject`
+### 👉  `npm run eject`
 - Use to eject your plugin out of `create-guten-block`.
 - Provides all the configurations so you can customize the project as you want.
 - It's a one-way street, `eject` and you have to maintain everything yourself.
