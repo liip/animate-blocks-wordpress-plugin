@@ -1,4 +1,5 @@
 language: php
+
 php:
   - 7.0
   - 7.1
@@ -9,13 +10,9 @@ install:
   - composer install
   - vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs
 
-jobs:
-  include:
-    - stage: test
-      script:
-        - scripts/phpcodesniffer.sh
-    - stage: deploy
-      php: 7.2
-      install: skip
-      script:
-        - scripts/deploy-wp-plugin.sh
+script:
+  - scripts/phpcodesniffer.sh
+
+deploy:
+  provider: script
+  script: scripts/deploy-wp-plugin.sh
