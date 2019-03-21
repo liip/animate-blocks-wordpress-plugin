@@ -5,15 +5,17 @@ php:
   - 7.2
   - 7.3
 
+install:
+  - composer install
+  - vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs
+
 jobs:
   include:
     - stage: test
-      install:
-        - composer install
-      before_script:
-        - vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs
       script:
         - scripts/phpcodesniffer.sh
     - stage: deploy
+      php: 7.2
+      install: skip
       script:
         - scripts/deploy-wp-plugin.sh
