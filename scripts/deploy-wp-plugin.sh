@@ -80,16 +80,14 @@ svn status | grep -v "^.[ \t]*\..*" | grep "^\!" | awk '{print $2"@"}' | xargs s
 svn status | grep -v "^.[ \t]*\..*" | grep "^?" | awk '{print $2"@"}' | xargs svn add
 # Fix image mime-types (see: https://developer.wordpress.org/plugins/wordpress-org/plugin-assets/)
 svn propset svn:mime-type image/png *.png
+
 # Commit all changes
-
-
-# !!!!!!!!!!! UNCOMMENT FOR LIVE DEPLOYMENT !!!!!!!!!!!
 # If password is set as environment variable ($SVNPASSWORD) use it otherwise promt password
-#if [ ! -z "$SVNPASSWORD" ]; then
-#	svn commit --username=$SVNUSER --password=$SVNPASSWORD -m "Preparing for $PLUGINVERSION release"
-#else
-#	svn commit --username=$SVNUSER -m "Preparing for $PLUGINVERSION release"
-#fi
+if [ ! -z "$SVNPASSWORD" ]; then
+	svn commit --username=$SVNUSER --password=$SVNPASSWORD -m "Preparing for $PLUGINVERSION release"
+else
+	svn commit --username=$SVNUSER -m "Preparing for $PLUGINVERSION release"
+fi
 
 # Update WordPress plugin assets
 # Make the directory if it doesn't already exist
@@ -109,16 +107,14 @@ svn status | grep -v "^.[ \t]*\..*" | grep "^?" | awk '{print $2"@"}' | xargs sv
 #svn update --accept mine-full $BUILDPATH/assets/*
 # Fix image mime-types (see: https://developer.wordpress.org/plugins/wordpress-org/plugin-assets/)
 svn propset svn:mime-type image/png *.png
+
 # Commit all changes
-
-
-# !!!!!!!!!!! UNCOMMENT FOR LIVE DEPLOYMENT !!!!!!!!!!!
 # If password is set as environment variable ($SVNPASSWORD) use it otherwise promt password
-#if [ ! -z "$SVNPASSWORD" ]; then
-#	svn commit --username=$SVNUSER --password=$SVNPASSWORD -m "Updating assets"
-#else
-#	svn commit --username=$SVNUSER -m "Updating assets"
-#fi
+if [ ! -z "$SVNPASSWORD" ]; then
+	svn commit --username=$SVNUSER --password=$SVNPASSWORD -m "Updating assets"
+else
+	svn commit --username=$SVNUSER -m "Updating assets"
+fi
 
 echo "Creating new SVN tag and committing it"
 cd $BUILDPATH
@@ -139,15 +135,13 @@ else
 	cd $BUILDPATH/tags/$PLUGINVERSION
 fi
 
-
-# !!!!!!!!!!! UNCOMMENT FOR LIVE DEPLOYMENT !!!!!!!!!!!
 # Commit plugin version
 # If password is set as environment variable ($SVNPASSWORD) use it otherwise promt password
-#if [ ! -z "$SVNPASSWORD" ]; then
-#	svn commit --username=$SVNUSER --password=$SVNPASSWORD -m "Tagging version $PLUGINVERSION"
-#else
-#	svn commit --username=$SVNUSER -m "Tagging version $PLUGINVERSION"
-#fi
+if [ ! -z "$SVNPASSWORD" ]; then
+	svn commit --username=$SVNUSER --password=$SVNPASSWORD -m "Tagging version $PLUGINVERSION"
+else
+	svn commit --username=$SVNUSER -m "Tagging version $PLUGINVERSION"
+fi
 
 echo "Successfully released v$PLUGINVERSION of the $PLUGINSLUG plugin!"
 echo
