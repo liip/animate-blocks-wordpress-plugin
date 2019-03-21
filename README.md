@@ -134,3 +134,12 @@ This project was bootstrapped with [Create Guten Block](https://github.com/ahmad
 - Provides all the configurations so you can customize the project as you want.
 - It's a one-way street, `eject` and you have to maintain everything yourself.
 - You don't normally have to `eject` a project because by ejecting you lose the connection with `create-guten-block` and from there onwards you have to update and maintain all the dependencies on your own.
+
+### Extract labels
+
+To extract the labels and generate the `languages/animate-blocks.pot` file run the following command:
+
+```
+$ curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+$ php wp-cli.phar i18n make-pot .
+```
