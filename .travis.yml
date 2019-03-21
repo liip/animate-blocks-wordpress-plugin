@@ -16,3 +16,10 @@ script:
 deploy:
   provider: script
   script: scripts/deploy-wp-plugin.sh
+  on:
+    all_branches: true
+    php: 7.2
+
+env:
+  global:
+    secure: xUWw/5RB8vS0Gq1hbWeUsNCsitWyoK2l24bMMVqCvRlHZIrf4pywVOmh5e3IU5UKdRaBQzKLwRwf8kHYusp2n35EEE6a3Fe+z9nNEM38bkPybtpH7RYv2DN9Mj6t2u+TE0KpzdglwFi+z5Eq+NMSeoucCanZdJM0nb6atkxcZMwmGd7LlihdihHaken+1gUEYv8paq7SkUYNJKGByJvKmADgBRqjQ5VW737YMV1V3fi79KAhoKWSQPlKAfcytNDFRUF2MzJ3Ba4kUm84aWHwncgph53jACciogvCbqmWBpQZUmiuQ2J2F3zXUJfurHHdxgLaztkmCoTGehnU4ZUIQvS/nq0N2LXu0LTl9efcb247gXi0v50D3AEoVUiJA8UdUmO3Fbd2EULWoJOmBNQcSHZKH2oNPm7IsQM4ZFUL7PH4c8j4yrDKlqBBF/Hf5sHrN3iX/4qtiBTUAvC4LuJideyJBBBjeuknncqckfq4Dp0jqe8TgMGxbVpX3rzfIOVyhA5vci9hHXzl9khX74NKTIlKpn44EVghpoU9N/rFiSlJWsc3DrS6SZ+VIgGVIx2I/0Tr3sTY3ak/fnygNkwgyAa0y5uQ3C5KFfTY8kegybSdLsvpbBDugHEhc5o8PalR6k2oDCMS+9celOWO8SqK1ul5qVlXXYcGL33WlVsk0CQ=
