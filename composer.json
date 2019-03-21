@@ -1,5 +1,5 @@
 {
-	"name": "animate-blocks",
+	"name": "liip/animate-blocks",
 	"description": "Animate Gutenberg blocks plugin for WordPress",
 	"type": "wordpress-plugin",
 	"license": "GPL-2.0",
