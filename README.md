@@ -1,5 +1,7 @@
 # Animate Blocks - Animate Gutenberg blocks plugin for WordPress
 
+[![Build Status](https://travis-ci.org/liip/animate-blocks-wordpress-plugin.svg?branch=master)](https://travis-ci.org/liip/animate-blocks-wordpress-plugin)
+
 Animate Gutenberg blocks when they scroll into view.
 
 * Works with all existing Gutenberg blocks
