@@ -3,7 +3,6 @@
  */
 
 // Import block dependencies
-import config from '../config';
 import anchorPlacementOptions from './anchor-placement-options';
 import animationOptions from './animation-options';
 import easingOptions from './easing-options';
@@ -36,11 +35,11 @@ let defaultOptions = {
 }
 defaultOptions = applyFilters( 'animateBlocks.defaultOptions', defaultOptions );
 
-registerBlockType( `${ config.namespace }/animate`, {
-	title: __( 'Animate Block', config.textDomain ),
+registerBlockType( 'animate-blocks/animate', {
+	title: __( 'Animate Block', 'animate-blocks' ),
 	icon: 'controls-forward',
 	category: 'layout',
-	description: __( 'Animate blocks inside this container.', config.textDomain ),
+	description: __( 'Animate blocks inside this container.', 'animate-blocks' ),
 
 	attributes: {
 		animation: {
@@ -94,7 +93,7 @@ registerBlockType( `${ config.namespace }/animate`, {
 				<InspectorControls>
 					<PanelBody>
 						<SelectControl
-							label={ __( 'Animation', config.textDomain ) }
+							label={ __( 'Animation', 'animate-blocks' ) }
 							value={ animation }
 							options={ animationOptions }
 							onChange={ ( selectedOption ) => setAttributes( { animation: selectedOption } ) }
@@ -116,34 +115,34 @@ registerBlockType( `${ config.namespace }/animate`, {
 							step={ 50 }
 						/>
 						<TextControl
-							label={ __( 'Offset (px)', config.textDomain ) }
-							help={ __( 'offset (in px) from the original trigger point', config.textDomain ) }
+							label={ __( 'Offset (px)', 'animate-blocks' ) }
+							help={ __( 'offset (in px) from the original trigger point', 'animate-blocks' ) }
 							type="number"
 							value={ offset }
 							onChange={ ( value ) => setAttributes( { offset: value } ) }
 						/>
 						<SelectControl
-							label={ __( 'Easing', config.textDomain ) }
-							help={ __( 'easing function for animations', config.textDomain ) }
+							label={ __( 'Easing', 'animate-blocks' ) }
+							help={ __( 'easing function for animations', 'animate-blocks' ) }
 							value={ easing }
 							options={ easingOptions }
 							onChange={ ( selectedOption ) => setAttributes( { easing: selectedOption } ) }
 						/>
 						<ToggleControl
-							label={ __( 'Once', config.textDomain ) }
+							label={ __( 'Once', 'animate-blocks' ) }
 							help={ 'whether animation should happen only once - while scrolling down' }
 							checked={ once }
 							onChange={ ( checked ) => setAttributes( { once: checked } ) }
 						/>
 						<ToggleControl
-							label={ __( 'Mirror', config.textDomain ) }
+							label={ __( 'Mirror', 'animate-blocks' ) }
 							help={ 'whether elements should animate out while scrolling past them' }
 							checked={ mirror }
 							onChange={ ( checked ) => setAttributes( { mirror: checked } ) }
 						/>
 						<SelectControl
-							label={ __( 'Anchor placement', config.textDomain ) }
-							help={ __( 'defines which position of the element regarding to window should trigger the animation', config.textDomain ) }
+							label={ __( 'Anchor placement', 'animate-blocks' ) }
+							help={ __( 'defines which position of the element regarding to window should trigger the animation', 'animate-blocks' ) }
 							value={ anchorPlacement }
 							options={ anchorPlacementOptions }
 							onChange={ ( selectedOption ) => setAttributes( { anchorPlacement: selectedOption } ) }
