@@ -84,9 +84,9 @@ svn propset svn:mime-type image/png *.png
 # Commit all changes
 # If password is set as environment variable ($SVNPASSWORD) use it otherwise promt password
 if [ ! -z "$SVNPASSWORD" ]; then
-	svn commit --username=$SVNUSER --password=$SVNPASSWORD -m "Preparing for $PLUGINVERSION release"
+	svn commit --username=$SVNUSER --password=$SVNPASSWORD -m "Preparing for $PLUGINVERSION release" --no-auth-cache
 else
-	svn commit --username=$SVNUSER -m "Preparing for $PLUGINVERSION release"
+	svn commit --username=$SVNUSER -m "Preparing for $PLUGINVERSION release" --no-auth-cache
 fi
 
 # Update WordPress plugin assets
@@ -111,9 +111,9 @@ svn propset svn:mime-type image/png *.png
 # Commit all changes
 # If password is set as environment variable ($SVNPASSWORD) use it otherwise promt password
 if [ ! -z "$SVNPASSWORD" ]; then
-	svn commit --username=$SVNUSER --password=$SVNPASSWORD -m "Updating assets"
+	svn commit --username=$SVNUSER --password=$SVNPASSWORD -m "Updating assets" --no-auth-cache
 else
-	svn commit --username=$SVNUSER -m "Updating assets"
+	svn commit --username=$SVNUSER -m "Updating assets" --no-auth-cache
 fi
 
 echo "Creating new SVN tag and committing it"
@@ -138,9 +138,9 @@ fi
 # Commit plugin version
 # If password is set as environment variable ($SVNPASSWORD) use it otherwise promt password
 if [ ! -z "$SVNPASSWORD" ]; then
-	svn commit --username=$SVNUSER --password=$SVNPASSWORD -m "Tagging version $PLUGINVERSION"
+	svn commit --username=$SVNUSER --password=$SVNPASSWORD -m "Tagging version $PLUGINVERSION" --no-auth-cache
 else
-	svn commit --username=$SVNUSER -m "Tagging version $PLUGINVERSION"
+	svn commit --username=$SVNUSER -m "Tagging version $PLUGINVERSION" --no-auth-cache
 fi
 
 echo "Successfully released v$PLUGINVERSION of the $PLUGINSLUG plugin!"
