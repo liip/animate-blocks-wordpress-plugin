@@ -24,10 +24,10 @@ if ( ! defined( 'ANIMATE_BLOCKS_PLUGIN_FILE' ) ) {
 	define( 'ANIMATE_BLOCKS_PLUGIN_FILE', __FILE__ );
 }
 
-// Include the main AnimateBlocks class.
-if ( ! class_exists( \AnimateBlocks\AnimateBlocks::class ) ) {
+// Include the main Animate_Blocks class.
+if ( ! class_exists( \Animate_Blocks\Animate_Blocks::class ) ) {
 	require_once plugin_dir_path( ANIMATE_BLOCKS_PLUGIN_FILE ) . 'src/class-animate-blocks.php';
 }
 
 // Initialize plugin
-\AnimateBlocks\AnimateBlocks::instance();
+\Animate_Blocks\Animate_Blocks::instance();
