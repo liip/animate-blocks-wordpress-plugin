@@ -6,19 +6,25 @@ php:
   - 7.2
   - 7.3
 
+before_install:
+  - nvm install 10
+
 install:
   - composer install
   - vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs
+  - npm install
 
 script:
   - scripts/phpcodesniffer.sh
+  - npm run lint
 
 deploy:
   provider: script
   script: scripts/deploy-wp-plugin.sh
   on:
-    all_branches: true
     php: 7.2
+    tags: true
+    all_branches: true
 
 env:
   global:
