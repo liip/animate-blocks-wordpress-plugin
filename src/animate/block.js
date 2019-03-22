@@ -24,15 +24,15 @@ const {
 const { applyFilters } = wp.hooks;
 
 let defaultOptions = {
-	animation: animationOptions && animationOptions.length > 0 ? animationOptions[0].value : 'fade',
+	animation: animationOptions && animationOptions.length > 0 ? animationOptions[ 0 ].value : 'fade',
 	offset: 120,
 	delay: 0,
 	duration: 400,
-	easing: easingOptions && easingOptions.length > 0 ? easingOptions[0].value : 'ease',
+	easing: easingOptions && easingOptions.length > 0 ? easingOptions[ 0 ].value : 'ease',
 	once: true,
 	mirror: false,
-	anchorPlacement: anchorPlacementOptions && anchorPlacementOptions.length > 0 ? anchorPlacementOptions[0].value : 'top-bottom',
-}
+	anchorPlacement: anchorPlacementOptions && anchorPlacementOptions.length > 0 ? anchorPlacementOptions[ 0 ].value : 'top-bottom',
+};
 defaultOptions = applyFilters( 'animateBlocks.defaultOptions', defaultOptions );
 
 registerBlockType( 'animate-blocks/animate', {
@@ -73,7 +73,7 @@ registerBlockType( 'animate-blocks/animate', {
 		anchorPlacement: {
 			type: 'string',
 			default: defaultOptions.anchorPlacement,
-		}
+		},
 	},
 
 	edit( { attributes, setAttributes, className } ) {
@@ -150,7 +150,7 @@ registerBlockType( 'animate-blocks/animate', {
 					</PanelBody>
 				</InspectorControls>
 				<div className={ className }>
-					<InnerBlocks/>
+					<InnerBlocks />
 				</div>
 			</Fragment>
 		);
@@ -180,8 +180,8 @@ registerBlockType( 'animate-blocks/animate', {
 				{ ...( mirror !== defaultOptions.mirror && { 'data-aos-mirror': mirror } ) }
 				{ ...( anchorPlacement !== defaultOptions.anchorPlacement && { 'data-aos-anchor-placement': anchorPlacement } ) }
 			>
-				<InnerBlocks.Content/>
+				<InnerBlocks.Content />
 			</div>
 		);
-	}
-});
+	},
+} );
