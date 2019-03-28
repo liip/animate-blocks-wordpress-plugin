@@ -23,6 +23,17 @@ const {
 } = wp.components;
 const { applyFilters } = wp.hooks;
 
+const aosDefaultOptions = {
+	animation: 'fade',
+	offset: 120,
+	delay: 0,
+	duration: 400,
+	easing: 'ease',
+	once: true,
+	mirror: false,
+	anchorPlacement: 'top-bottom',
+};
+
 let defaultOptions = {
 	animation: animationOptions && animationOptions.length > 0 ? animationOptions[ 0 ].value : 'fade',
 	offset: 120,
@@ -172,13 +183,13 @@ registerBlockType( 'animate-blocks/animate', {
 			<div
 				className={ className }
 				data-aos={ animation }
-				{ ...( delay !== defaultOptions.delay && { 'data-aos-delay': delay } ) }
-				{ ...( duration !== defaultOptions.duration && { 'data-aos-duration': duration } ) }
-				{ ...( offset !== defaultOptions.offset && { 'data-aos-offset': offset } ) }
-				{ ...( easing !== defaultOptions.easing && { 'data-aos-easing': easing } ) }
-				{ ...( once !== defaultOptions.once && { 'data-aos-once': once } ) }
-				{ ...( mirror !== defaultOptions.mirror && { 'data-aos-mirror': mirror } ) }
-				{ ...( anchorPlacement !== defaultOptions.anchorPlacement && { 'data-aos-anchor-placement': anchorPlacement } ) }
+				{ ...( delay !== aosDefaultOptions.delay && { 'data-aos-delay': delay } ) }
+				{ ...( duration !== aosDefaultOptions.duration && { 'data-aos-duration': duration } ) }
+				{ ...( offset !== aosDefaultOptions.offset && { 'data-aos-offset': offset } ) }
+				{ ...( easing !== aosDefaultOptions.easing && { 'data-aos-easing': easing } ) }
+				{ ...( once !== aosDefaultOptions.once && { 'data-aos-once': once } ) }
+				{ ...( mirror !== aosDefaultOptions.mirror && { 'data-aos-mirror': mirror } ) }
+				{ ...( anchorPlacement !== aosDefaultOptions.anchorPlacement && { 'data-aos-anchor-placement': anchorPlacement } ) }
 			>
 				<InnerBlocks.Content />
 			</div>
