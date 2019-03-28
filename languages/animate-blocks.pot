@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Animate Blocks plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Animate Blocks 1.0.0\n"
+"Project-Id-Version: Animate Blocks 1.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/animate-blocks\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2019-03-21T07:40:33+00:00\n"
+"POT-Creation-Date: 2019-03-28T13:33:47+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.1.0\n"
 "X-Domain: animate-blocks\n"
@@ -34,8 +34,8 @@ msgstr ""
 msgid "https://liip.ch"
 msgstr ""
 
-#: src/class-animate-blocks.php:167
-#: src/class-animate-blocks.php:174
+#: src/class-animate-blocks.php:170
+#: src/class-animate-blocks.php:177
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 
@@ -267,46 +267,46 @@ msgstr ""
 msgid "No Animation"
 msgstr ""
 
-#: src/animate/block.js:39
+#: src/animate/block.js:50
 msgid "Animate Block"
 msgstr ""
 
-#: src/animate/block.js:42
+#: src/animate/block.js:53
 msgid "Animate blocks inside this container."
 msgstr ""
 
-#: src/animate/block.js:96
+#: src/animate/block.js:107
 msgid "Animation"
 msgstr ""
 
-#: src/animate/block.js:118
+#: src/animate/block.js:129
 msgid "Offset (px)"
 msgstr ""
 
-#: src/animate/block.js:119
+#: src/animate/block.js:130
 msgid "offset (in px) from the original trigger point"
 msgstr ""
 
-#: src/animate/block.js:125
+#: src/animate/block.js:136
 msgid "Easing"
 msgstr ""
 
-#: src/animate/block.js:126
+#: src/animate/block.js:137
 msgid "easing function for animations"
 msgstr ""
 
-#: src/animate/block.js:132
+#: src/animate/block.js:143
 msgid "Once"
 msgstr ""
 
-#: src/animate/block.js:138
+#: src/animate/block.js:149
 msgid "Mirror"
 msgstr ""
 
-#: src/animate/block.js:144
+#: src/animate/block.js:155
 msgid "Anchor placement"
 msgstr ""
 
-#: src/animate/block.js:145
+#: src/animate/block.js:156
 msgid "defines which position of the element regarding to window should trigger the animation"
 msgstr ""

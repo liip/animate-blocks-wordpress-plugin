@@ -5,7 +5,7 @@ Tags: gutenberg, blocks, animations
 Requires at least: 5.0
 Tested up to: 5.1.1
 Requires PHP: 5.6
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -52,6 +52,10 @@ Please create a new GitHub issue and let us know: [https://github.com/liip/anima
 1. Animate Blocks in Gutenberg editor
 
 == Changelog ==
+
+= 1.0.1 =
+
+* [BUGFIX] Fix rendering of data-attributes when default options are changed.
 
 = 1.0.0 =
 

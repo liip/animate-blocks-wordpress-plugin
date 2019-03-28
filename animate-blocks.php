@@ -5,7 +5,7 @@
  * Description: Animate your Gutenberg blocks.
  * Author: Team Jazz, Liip AG
  * Author URI: https://liip.ch
- * Version: 1.0.0
+ * Version: 1.0.1
  * License: GPL2+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain: animate-blocks
