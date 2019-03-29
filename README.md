@@ -163,5 +163,5 @@ To extract the labels and generate the `languages/animate-blocks.pot` file run t
 
 ```
 $ curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-$ php wp-cli.phar i18n make-pot .
+$ php wp-cli.phar i18n make-pot . languages/animate-blocks.pot
 ```
