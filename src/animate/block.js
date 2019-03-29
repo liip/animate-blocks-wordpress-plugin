@@ -102,7 +102,10 @@ registerBlockType( 'animate-blocks/animate', {
 		return (
 			<Fragment>
 				<InspectorControls>
-					<PanelBody>
+					<PanelBody
+						title={ __( 'Animation options', 'animate-blocks' ) }
+						initialOpen={ true }
+					>
 						<SelectControl
 							label={ __( 'Animation', 'animate-blocks' ) }
 							value={ animation }

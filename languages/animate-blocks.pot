@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2019-03-29T19:14:20+00:00\n"
+"POT-Creation-Date: 2019-03-29T19:47:48+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.1.0\n"
 "X-Domain: animate-blocks\n"
@@ -275,38 +275,42 @@ msgstr ""
 msgid "Animate blocks inside this container."
 msgstr ""
 
-#: src/animate/block.js:107
+#: src/animate/block.js:106
+msgid "Animation options"
+msgstr ""
+
+#: src/animate/block.js:110
 msgid "Animation"
 msgstr ""
 
-#: src/animate/block.js:129
+#: src/animate/block.js:132
 msgid "Offset (px)"
 msgstr ""
 
-#: src/animate/block.js:130
+#: src/animate/block.js:133
 msgid "offset (in px) from the original trigger point"
 msgstr ""
 
-#: src/animate/block.js:136
+#: src/animate/block.js:139
 msgid "Easing"
 msgstr ""
 
-#: src/animate/block.js:137
+#: src/animate/block.js:140
 msgid "easing function for animations"
 msgstr ""
 
-#: src/animate/block.js:143
+#: src/animate/block.js:146
 msgid "Once"
 msgstr ""
 
-#: src/animate/block.js:149
+#: src/animate/block.js:152
 msgid "Mirror"
 msgstr ""
 
-#: src/animate/block.js:155
+#: src/animate/block.js:158
 msgid "Anchor placement"
 msgstr ""
 
-#: src/animate/block.js:156
+#: src/animate/block.js:159
 msgid "defines which position of the element regarding to window should trigger the animation"
 msgstr ""
